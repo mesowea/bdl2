@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Запити</h1>
+    <div style="margin-bottom: 10px"></div>
+</div>
+<div class="row">
+    <form asp-action="RunQuery" method="get">
+        <div>
+            <input type="radio" id="queryChoice1" name="query_index" value="1" checked>
+            <label for="queryChoice1">Юзернейми та імена акаунтів, що мають публікації з важливістю більше, ніж <i>Number</i></label>
+            <br>
+            <input type="radio" id="contactChoice2" name="query_index" value="2">
+            <label for="contactChoice2">Юзернейми та імена акаунтів, що не мають публікацій важливістю більше, ніж <i>Number</i></label>
+            <br>
+            <input type="radio" id="contactChoice3" name="query_index" value="3">
+            <label for="contactChoice3">Юзернейми та імена акаунтів, що мають принаймні один пост з лінзою з максимальною фокусною відстанню більше, ніж <i>Number</i> для типу кріплення <i>String</i></label>
+            <br>
+            <input type="radio" id="contactChoice4" name="query_index" value="4">
+            <label for="contactChoice4">Камери та лінзи, що використовувалися у публікаціях акаунту з юзернеймом <i>String</i></label>
+            <br>
+            <input type="radio" id="contactChoice5" name="query_index" value="5">
+            <label for="contactChoice5">Виробники та моделі лінз з таким самим кріпленням, як в камерах, що використовувалися в публікаціях акаунту з юзернеймом <i>String</i> з важливістю більше, ніж <i>Number</i></label>
+            <br>
+            <input type="radio" id="contactChoice6" name="query_index" value="6">
+            <label for="contactChoice6">Юзернейми акаунтів, що використовують всі камери з типом кріплення <i>String</i></label>
+            <br>
+            <input type="radio" id="contactChoice7" name="query_index" value="7">
+            <label for="contactChoice7">Юзернейми акаунтів, що використовуютть тільки лінзи, що використовуються акаунтом з юзернеймом <i>String</i></label>
+            <br>
+            <input type="radio" id="contactChoice8" name="query_index" value="8">
+            <label for="contactChoice8">Вирибники та моделі лінз, що використовувалися хоча б двома акаунтами з країни <i>String</i></label>
+            <br>
+            <input type="radio" id="contactChoice9" name="query_index" value="9">
+            <label for="contactChoice9">Акаунти, що використовують усі типи кріплень</label>
+            <br>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label">String</label>
+                <input class="form-control" name="str" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Number</label>
+                <input type="number" class="form-control" name="num"/>
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="Виконати" class="btn btn-primary" />
+    </form>
+</div>
+
+<h1 class="display-4">@ViewBag.TestBox</h1>
+

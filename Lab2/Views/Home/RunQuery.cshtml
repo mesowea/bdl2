@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Query";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Результат запиту</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @ViewBag.QueryResult)
+        {
+        <tr>
+            @foreach (var prop in item.GetType().GetProperties())
+            {
+                <td>
+                    @prop.GetValue(item, null);
+                </td>
+            }
+            </tr>
+        }
+</table>
